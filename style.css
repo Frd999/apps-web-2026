@@ -1,0 +1,94 @@
+/* 1. RESET Y BOX-SIZING (Como viene en tu imagen) */
+* {
+    box-sizing: border-box; /* Controla el ancho y alto incluyendo padding y border */
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. ESTILOS GENERALES DEL CUERPO */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px; /* Padding interno */
+}
+
+/* 3. ENCABEZADO */
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px; /* Margin para separar de lo demás */
+    border-radius: 8px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* 4. CONTENIDO PRINCIPAL Y SECCIONES */
+main {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+section {
+    flex: 3;
+    background-color: white;
+    padding: 20px; /* Space inside */
+    border: 2px solid #ddd; /* Border alrededor del contenido */
+    border-radius: 8px;
+}
+
+aside {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+/* 5. TARJETA / ARTÍCULO CON PROPIEDADES DE CAJA */
+article {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    border-radius: 6px;
+}
+
+/* 6. IMAGEN CON TAMAÑO Y BORDES */
+article img {
+    margin-top: 10px;
+    border: 3px solid #0056b3; /* Border visible */
+    padding: 5px; /* Padding entre imagen y borde */
+    background-color: white;
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 7. PIE DE PÁGINA */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #222;
+    color: white;
+    border-radius: 6px;
+    margin-top: 20px;
+}
