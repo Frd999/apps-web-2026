@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MenteSana | Agendar Cita (RF-003)</title>
+    
+    <!-- Google Fonts: Roboto (Material Design 3) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Principal MenteSana -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand-logo">
+                <i class="fa-solid fa-brain brand-icon"></i>
+                <div class="brand-title">
+                    <span class="main-title">MenteSana</span>
+                    <span class="sub-title">Atención Psicológica - UPP</span>
+                </div>
+            </div>
+
+            <!-- Navegación Principal -->
+            <nav class="main-nav">
+                <ul>
+                    <li class="active"><a href="agendar.html"><i class="fa-solid fa-calendar-check"></i> Agendar Cita</a></li>
+                    <li><a href="index.html"><i class="fa-solid fa-face-smile"></i> Registro Emocional</a></li>
+                    <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Mis Citas</a></li>
+                </ul>
+            </nav>
+
+            <!-- Usuario Activo -->
+            <div class="user-menu">
+                <img src="avatar-placeholder.png" alt="Foto del alumno" class="user-avatar">
+                <span class="user-name">José Farid</span>
+                <button class="btn-logout" aria-label="Cerrar sesión"><i class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-container">
+
+        <section class="md3-card schedule-card">
+            <div class="card-header">
+                <div class="header-icon">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                </div>
+                <div>
+                    <h2>Agendar Cita Psicológica</h2>
+                    <p class="card-subtitle">RF-003: Selecciona al especialista y un horario disponible. Al agendar se enviará un correo de confirmación.</p>
+                </div>
+            </div>
+
+            <form class="appointment-form">
+                
+                <!-- Selección de Psicólogo/a -->
+                <div class="form-group select-psychologist-group">
+                    <label for="psicologo-select"><i class="fa-solid fa-user-doctor"></i> Selecciona un Especialista:</label>
+                    <select id="psicologo-select" class="form-control-select">
+                        <option value="">-- Selecciona a un psicólogo/a --</option>
+                        <option value="1" selected>Lic.Pepe</option>
+                        <option value="2">Dra. Juana</option>
+                        <option value="3">Lic. Carlos</option>
+                    </select>
+                </div>
+
+                <!-- Agenda del Psicólogo Seleccionado (Mockup) -->
+                <div class="schedule-section">
+                    <h3 class="schedule-title"><i class="fa-solid fa-calendar-days"></i> Agenda de Horarios Disponibles</h3>
+                    
+                    <div class="schedule-grid-wrapper">
+                        <div class="schedule-grid">
+                            
+                            <!-- Encabezados de Columna -->
+                            <div class="grid-header time-col-header">Horario</div>
+                            <div class="grid-header">LUN</div>
+                            <div class="grid-header">MAR</div>
+                            <div class="grid-header">MIER</div>
+                            <div class="grid-header">JUEV</div>
+                            <div class="grid-header">VIE</div>
+
+                            <!-- Fila 1: 7 - 8 -->
+                            <div class="time-slot-label">7 - 8</div>
+                            <label class="slot-card">
+                                <input type="radio" name="horario_cita" value="lun_0700">
+                                <span class="slot-content">Disponible</span>
+                            </label>
+                            <label class="slot-card">
+                                <input type="radio" name="horario_cita" value="mar_0700">
+                                <span class="slot-content">Disponible</span>
+                            </label>
+                            <label class="slot-card">
+                                <input type="radio" name="horario_cita" value="mie_0700">
+                                <span class="slot-content">Disponible</span>
+                            </label>
+                            <label class="slot-card disabled">
+                                <span class="slot-content">Ocupado</span>
+                            </label>
+                            <label class="slot-card">
+                                <input type="radio" name="horario_cita" value="vie_0700">
+                                <span class="slot-content">Disponible</span>
+                            </label>
+
+                            <!-- Fila 2: 8 - 9 -->
+                            <div class="time-slot-label">8 - 9</div>
+                            <label class="slot-card">
+                                <input type="radio" name="horario_cita" value="lun_0800">
+                                <span class="slot-content">Disponible</span>
+                            </label>
+                            <label class="slot-card disabled">
+                                <span class="slot-content">Ocupado</span>
+                            </label>
+                            <label class="slot-card">
+                                <input type="radio" name="horario_cita" value="mie_0800">
+                                <span class="slot-content">Disponible</span>
+                            </label>
+                            <label class="slot-card">
+                                <input type="radio" name="horario_cita" value="jue_0800">
+                                <span class="slot-content">Disponible</span>
+                            </label>
+                            <label class="slot-card">
+                                <input type="radio" name="horario_cita" value="vie_0800">
+                                <span class="slot-content">Disponible</span>
+                            </label>
+
+                            <!-- Fila 3: 9 - 10 -->
+                            <div class="time-slot-label">9 - 10</div>
+                            <label class="slot-card">
+                                <input type="radio" name="horario_cita" value="lun_0900">
+                                <span class="slot-content">Disponible</span>
+                            </label>
+                            <label class="slot-card">
+                                <input type="radio" name="horario_cita" value="mar_0900">
+                                <span class="slot-content">Disponible</span>
+                            </label>
+                            <label class="slot-card">
+                                <input type="radio" name="horario_cita" value="mie_0900">
+                                <span class="slot-content">Disponible</span>
+                            </label>
+                            <label class="slot-card">
+                                <input type="radio" name="horario_cita" value="jue_0900">
+                                <span class="slot-content">Disponible</span>
+                            </label>
+                            <label class="slot-card disabled">
+                                <span class="slot-content">Ocupado</span>
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón Principal Agendar -->
+                <div class="form-actions text-center">
+                    <button type="submit" class="md3-btn md3-btn-primary btn-agendar">
+                        <i class="fa-solid fa-paper-plane"></i> AGENDAR
+                    </button>
+                    <p class="confirmation-notice">
+                        <i class="fa-solid fa-envelope"></i> Se enviará un correo electrónico de confirmación inmediatamente después de reservar la cita[cite: 1].
+                    </p>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer MenteSana -->
+    <footer class="app-footer">
+        <p>&copy; 2026 MenteSana - Universidad Politécnica de Pachuca. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

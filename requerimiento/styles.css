@@ -1,0 +1,640 @@
+/* ==========================================================================
+   MenteSana - Material Design 3 (MD3) + Guía de Estilos Personalizada
+   Paleta: Morado, Azul, Amarillo, Neutros (Blanco / Negro)
+   ========================================================================== */
+
+/* 1. Variables de la Guía de Estilos & MD3 Tokens */
+:root {
+    /* Colores Principales de la Guía de Estilos */
+    --color-morado-primary: #6750A4;     /* Morado MD3 Principal */
+    --color-morado-dark: #21005D;        /* Morado Oscuro / Headers */
+    --color-morado-container: #EADDFF;   /* Morado Claro Superficie */
+    
+    --color-azul-secondary: #0061A4;     /* Azul Secundario / Acentos */
+    --color-azul-container: #D1E4FF;    /* Azul Claro */
+    
+    --color-amarillo-accent: #E0A100;    /* Amarillo Acento / Alertas */
+    --color-amarillo-container: #FFF0C2;/* Amarillo Suave Fondo */
+
+    /* Neutros (Blanco y Negro/Gris Oscuro) */
+    --color-negro: #1C1B1F;              /* Texto Principal (Alto contraste MD3) */
+    --color-blanco: #FFFFFF;             /* Superficie de Tarjetas */
+    --color-gris-neutro: #49454F;        /* Texto Secundario */
+    --bg-body: #F4F3F7;                  /* Fondo de pantalla suave */
+    --border-outline: #79747E;           /* Bordes según guía MD3 */
+
+    /* Tipografía Material Design 3 */
+    --font-roboto: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Radios de Borde MD3 */
+    --radius-small: 8px;
+    --radius-medium: 16px;
+    --radius-large: 28px;
+
+    /* Sombras y Elevaciones MD3 */
+    --elevation-1: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.14);
+    --elevation-2: 0px 2px 6px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.18);
+    --transition-md3: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* 2. Reset y Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-roboto);
+    background-color: var(--bg-body);
+    color: var(--color-negro);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 3. Header Principal (Estilo Morado + Azul MD3) */
+.app-header {
+    background-color: var(--color-morado-dark);
+    color: var(--color-blanco);
+    box-shadow: var(--elevation-2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.brand-icon {
+    font-size: 2rem;
+    color: var(--color-amarillo-accent);
+}
+
+.brand-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+}
+
+.sub-title {
+    font-size: 0.75rem;
+    color: var(--color-morado-container);
+    letter-spacing: 0.5px;
+}
+
+/* Navegación con fichas MD3 */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+.main-nav a {
+    color: var(--color-morado-container);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-large);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition-md3);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.main-nav a:hover,
+.main-nav li.active a {
+    color: var(--color-blanco);
+    background-color: var(--color-morado-primary);
+}
+
+/* Usuario */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-large);
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-amarillo-accent);
+}
+
+.user-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-blanco);
+}
+
+.btn-logout {
+    background: none;
+    border: none;
+    color: var(--color-morado-container);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition-md3);
+}
+
+.btn-logout:hover {
+    color: var(--color-amarillo-accent);
+}
+
+/* 4. Layout Principal */
+.main-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+
+/* Banner de Bienvenida MD3 */
+.welcome-banner {
+    background-color: var(--color-morado-container);
+    border-radius: var(--radius-medium);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.welcome-banner h1 {
+    color: var(--color-morado-dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.welcome-banner p {
+    color: var(--color-negro);
+    font-size: 0.95rem;
+}
+
+/* Rejilla Dashboard */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* 5. Tarjetas Material Design 3 (Cards) */
+.md3-card {
+    background-color: var(--color-blanco);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--elevation-1);
+    padding: 2rem;
+    border: 1px solid rgba(121, 116, 126, 0.2);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(121, 116, 126, 0.2);
+}
+
+.header-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-azul-container);
+    color: var(--color-azul-secondary);
+    border-radius: var(--radius-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.card-header h2 {
+    font-size: 1.25rem;
+    color: var(--color-negro);
+    font-weight: 700;
+}
+
+.card-subtitle {
+    font-size: 0.85rem;
+    color: var(--color-gris-neutro);
+}
+
+/* 6. Escala de Selección Emocional (MD3 Tokens de Color) */
+.mood-selection {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.mood-card {
+    cursor: pointer;
+}
+
+.mood-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mood-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem 0.5rem;
+    border-radius: var(--radius-medium);
+    border: 1px solid var(--border-outline);
+    background-color: var(--color-blanco);
+    transition: var(--transition-md3);
+    text-align: center;
+}
+
+.mood-icon {
+    font-size: 2rem;
+    margin-bottom: 0.4rem;
+}
+
+.mood-score {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.mood-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Colores de Escala dentro de la Guía */
+.level-1 .mood-icon, .level-1 .mood-score { color: #B3261E; } /* Rojo MD3 */
+.level-2 .mood-icon, .level-2 .mood-score { color: #C67D00; } /* Naranja */
+.level-3 .mood-icon, .level-3 .mood-score { color: var(--color-amarillo-accent); } /* Amarillo */
+.level-4 .mood-icon, .level-4 .mood-score { color: var(--color-azul-secondary); } /* Azul */
+.level-5 .mood-icon, .level-5 .mood-score { color: var(--color-morado-primary); } /* Morado */
+
+.mood-card:hover .mood-content {
+    background-color: var(--bg-body);
+}
+
+/* Selección activa */
+.mood-card input[type="radio"]:checked + .mood-content {
+    border-width: 2px;
+    box-shadow: var(--elevation-2);
+}
+
+.mood-card input[type="radio"]:checked + .level-1 { border-color: #B3261E; background-color: #F9DEDC; }
+.mood-card input[type="radio"]:checked + .level-2 { border-color: #C67D00; background-color: #FFDF9E; }
+.mood-card input[type="radio"]:checked + .level-3 { border-color: var(--color-amarillo-accent); background-color: var(--color-amarillo-container); }
+.mood-card input[type="radio"]:checked + .level-4 { border-color: var(--color-azul-secondary); background-color: var(--color-azul-container); }
+.mood-card input[type="radio"]:checked + .level-5 { border-color: var(--color-morado-primary); background-color: var(--color-morado-container); }
+
+/* Campos y Textarea MD3 */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--color-negro);
+}
+
+.optional {
+    color: var(--color-gris-neutro);
+    font-weight: normal;
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-outline);
+    border-radius: var(--radius-small);
+    font-family: var(--font-roboto);
+    font-size: 0.95rem;
+    color: var(--color-negro);
+    background-color: var(--color-blanco);
+    resize: vertical;
+    transition: var(--transition-md3);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--color-morado-primary);
+    border-width: 2px;
+}
+
+/* Botones Material Design 3 */
+.md3-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-large);
+    font-family: var(--font-roboto);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: var(--transition-md3);
+}
+
+.md3-btn-primary {
+    background-color: var(--color-morado-primary);
+    color: var(--color-blanco);
+    box-shadow: var(--elevation-1);
+}
+
+.md3-btn-primary:hover {
+    background-color: var(--color-morado-dark);
+    box-shadow: var(--elevation-2);
+}
+
+.md3-btn-secondary {
+    background-color: var(--color-azul-secondary);
+    color: var(--color-blanco);
+    width: 100%;
+}
+
+.md3-btn-secondary:hover {
+    background-color: #004878;
+}
+
+/* 7. Sidebar e Historial */
+.sidebar-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.history-card h3 {
+    font-size: 1.1rem;
+    color: var(--color-negro);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.recent-logs-list {
+    list-style: none;
+}
+
+.recent-logs-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px dashed rgba(121, 116, 126, 0.3);
+}
+
+.recent-logs-list li:last-child {
+    border-bottom: none;
+}
+
+.log-date {
+    font-size: 0.88rem;
+    color: var(--color-gris-neutro);
+}
+
+.badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-large);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.badge-pending { background-color: var(--bg-body); color: var(--color-gris-neutro); }
+.level-5-badge { background-color: var(--color-morado-container); color: var(--color-morado-dark); }
+.level-4-badge { background-color: var(--color-azul-container); color: var(--color-azul-secondary); }
+.level-3-badge { background-color: var(--color-amarillo-container); color: #825D00; }
+
+/* Tarjeta de Ayuda (Amarillo Acento) */
+.help-card {
+    background-color: var(--color-amarillo-container);
+    border: 1px solid var(--color-amarillo-accent);
+    text-align: center;
+}
+
+.help-icon {
+    font-size: 2.2rem;
+    color: var(--color-amarillo-accent);
+    margin-bottom: 0.8rem;
+}
+
+.help-card h4 {
+    margin-bottom: 0.4rem;
+    color: var(--color-negro);
+}
+
+.help-card p {
+    font-size: 0.85rem;
+    color: var(--color-gris-neutro);
+    margin-bottom: 1.2rem;
+}
+
+/* 8. Footer */
+.app-footer {
+    background-color: var(--color-morado-dark);
+    color: var(--color-morado-container);
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+/* 9. Responsividad */
+@media (max-width: 992px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav ul {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .user-menu {
+        align-self: flex-end;
+        margin-top: -3rem;
+    }
+
+    .mood-selection {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .mood-selection {
+        grid-template-columns: 1fr;
+    }
+    
+    .mood-content {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.8rem 1.2rem;
+    }
+
+    .mood-icon {
+        margin-bottom: 0;
+    }
+}
+/* Contenedor responsivo para el calendario */
+.schedule-grid-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 80px repeat(5, 1fr);
+    gap: 10px;
+    min-width: 600px; /* Garantiza legibilidad en pantallas pequeñas con scroll horizontal */
+}
+
+.grid-header {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f4f9;
+    border-radius: 8px;
+    color: #1f1f1f;
+}
+
+.time-slot-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: #444746;
+}
+
+/* Tarjetas de opción de horario */
+.slot-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #c4c7c5;
+    border-radius: 10px;
+    padding: 12px 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #ffffff;
+}
+
+.slot-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.slot-card:hover {
+    border-color: #0b57d0;
+    background-color: #f4f8ff;
+}
+
+.slot-card:has(input[type="radio"]:checked) {
+    border-color: #0b57d0;
+    background-color: #d3e3fd;
+    font-weight: bold;
+    color: #041e49;
+}
+
+/* Estado Ocupado */
+.slot-card.disabled {
+    background-color: #e0e0e0;
+    border-color: #d1d1d1;
+    color: #8e8e8e;
+    cursor: not-allowed;
+}
+
+/* Estilos de Botón y Avisos */
+.text-center {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-agendar {
+    font-size: 1.1rem;
+    padding: 12px 32px;
+    letter-spacing: 1px;
+}
+
+.confirmation-notice {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #5e5e5e;
+}
+/* Selector de Psicólogo */
+.select-psychologist-group {
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.select-psychologist-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #1f1f1f;
+    font-size: 1rem;
+}
+
+.form-control-select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    border: 2px solid #747775;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #1f1f1f;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-control-select:focus {
+    border-color: #0b57d0;
+}
+
+/* Título de la agenda */
+.schedule-title {
+    font-size: 1.1rem;
+    color: #1f1f1f;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

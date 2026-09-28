@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MenteSana | Registro Emocional Diario</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Principal MenteSana -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand-logo">
+                <i class="fa-solid fa-brain brand-icon"></i>
+                <div class="brand-title">
+                    <span class="main-title">MenteSana</span>
+                    <span class="sub-title">Atención Psicológica - UPP</span>
+                </div>
+            </div>
+
+            <!-- Navegación Principal -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="agendar.html"><i class="fa-solid fa-calendar-check"></i> Agendar Cita</a></li>
+                    <li class="active"><a href="index.html"><i class="fa-solid fa-face-smile"></i> Registro Emocional</a></li>
+                    <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Mis Citas</a></li>
+                </ul>
+            </nav>
+
+            <!-- Usuario Activo -->
+            <div class="user-menu">
+                <img src="avatar-placeholder.png" alt="Foto del alumno" class="user-avatar">
+                <span class="user-name">José Farid</span>
+                <button class="btn-logout" aria-label="Cerrar sesión"><i class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-container">
+
+        <!-- Contenedor Principal del Formulario (RF-005) -->
+        <div class="dashboard-grid">
+            
+            <section class="md3-card form-card">
+                <div class="card-header">
+                    <div class="header-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div>
+                        <h2>Registro Emocional Diario</h2>
+                        <p class="card-subtitle">RF-005: Selecciona la opción que mejor represente tu estado de ánimo (1 al 5)</p>
+                    </div>
+                </div>
+
+                <div class="emotional-form">
+                    
+                    <!-- Selección de Escala del 1 al 5 -->
+                    <div class="mood-selection">
+                        
+                        <label class="mood-card">
+                            <input type="radio" name="estado_animo" value="1">
+                            <div class="mood-content level-1">
+                                <i class="fa-solid fa-face-sad-cry mood-icon"></i>
+                                <span class="mood-score">1</span>
+                                <span class="mood-text">Muy Mal</span>
+                            </div>
+                        </label>
+
+                        <label class="mood-card">
+                            <input type="radio" name="estado_animo" value="2">
+                            <div class="mood-content level-2">
+                                <i class="fa-solid fa-face-frown mood-icon"></i>
+                                <span class="mood-score">2</span>
+                                <span class="mood-text">Mal</span>
+                            </div>
+                        </label>
+
+                        <label class="mood-card">
+                            <input type="radio" name="estado_animo" value="3">
+                            <div class="mood-content level-3">
+                                <i class="fa-solid fa-face-meh mood-icon"></i>
+                                <span class="mood-score">3</span>
+                                <span class="mood-text">Regular</span>
+                            </div>
+                        </label>
+
+                        <label class="mood-card">
+                            <input type="radio" name="estado_animo" value="4">
+                            <div class="mood-content level-4">
+                                <i class="fa-solid fa-face-smile mood-icon"></i>
+                                <span class="mood-score">4</span>
+                                <span class="mood-text">Bien</span>
+                            </div>
+                        </label>
+
+                        <label class="mood-card">
+                            <input type="radio" name="estado_animo" value="5">
+                            <div class="mood-content level-5">
+                                <i class="fa-solid fa-face-laugh-beam mood-icon"></i>
+                                <span class="mood-score">5</span>
+                                <span class="mood-text">Excelente</span>
+                            </div>
+                        </label>
+
+                    </div>
+
+                    <!-- Detalles o notas adicionales -->
+                    <div class="form-group">
+                        <label for="comentario">¿Qué factores influyeron en tu estado de ánimo hoy? <span class="optional">(Opcional)</span></label>
+                        <textarea id="comentario" rows="3" placeholder="Ej. Exámenes finales, estrés por proyectos, buen descanso..."></textarea>
+                    </div>
+
+                    <!-- Botón de guardado -->
+                    <div class="form-actions">
+                        <button type="button" class="md3-btn md3-btn-primary">
+                            <i class="fa-solid fa-floppy-disk"></i> Guardar mi registro de hoy
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Panel Lateral de Resumen/Historial -->
+            <aside class="sidebar-info">
+                <div class="md3-card history-card">
+                    <h3><i class="fa-solid fa-chart-line"></i> Tus últimos días</h3>
+                    <ul class="recent-logs-list">
+                        <li>
+                            <span class="log-date">Hoy</span>
+                            <span class="badge badge-pending">Pendiente</span>
+                        </li>
+                        <li>
+                            <span class="log-date">Ayer</span>
+                            <span class="badge level-4-badge">4 - Bien</span>
+                        </li>
+                        <li>
+                            <span class="log-date">24 Sep</span>
+                            <span class="badge level-5-badge">5 - Excelente</span>
+                        </li>
+                        <li>
+                            <span class="log-date">23 Sep</span>
+                            <span class="badge level-3-badge">3 - Regular</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="md3-card help-card">
+                    <i class="fa-solid fa-user-doctor help-icon"></i>
+                    <h4>¿Necesitas hablar con un profesional?</h4>
+                    <p>Si sientes que necesitas orientación o apoyo psicológico, no dudes en agendar una sesión.</p>
+                    <button type="button" class="md3-btn md3-btn-secondary">Agendar cita</button>
+                </div>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- Footer MenteSana -->
+    <footer class="app-footer">
+        <p>&copy; 2026 MenteSana - Universidad Politécnica de Pachuca. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
